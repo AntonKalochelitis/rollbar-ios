@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "RollbarConfiguration.h"
 
+
+/**
+ * DUOLINGO
+ *
+ * Note: This uses PLCrashReporter, which our apps already use by virtue of using HockeyApp.
+ *       We patched it out of Rollbar's SDK for simplicity.
+ */
+
+
 @interface Rollbar : NSObject
 
-+ (void)initWithAccessToken:(NSString*)accessToken configuration:(RollbarConfiguration*)configuration
-        enableCrashReporter:(BOOL)enable;
 + (void)initWithAccessToken:(NSString*)accessToken;
 + (void)initWithAccessToken:(NSString*)accessToken configuration:(RollbarConfiguration*)configuration;
 
